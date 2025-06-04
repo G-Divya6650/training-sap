@@ -1,0 +1,5 @@
+ID;bookName;author;edition;noOfCopies;yearOfPublish;isAvailable
+8fcd67ca-3cb5-11f0-9667-325096b39f47;The Alchemist;Paulo Coelho;2;50;1997;true
+8fcd69d2-3cb5-11f0-8171-325096b39f47;Sapiens: A Brief History;Yuval Noah Harari;3;10;2000;false
+8fcd6a4a-3cb5-11f0-99f7-325096b39f47;Atomic Habits;James Clear;2;7;2004;true
+8fcd6a9a-3cb5-11f0-b08c-325096b39f47;The Power of Now;Eckhart Tolle;3;38;2009;false
