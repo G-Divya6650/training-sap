@@ -149,6 +149,25 @@ annotate service.Users with {
             ]
         },
     );
+    firstName @(
+        //Common.ValueListWithFixedValues,
+        Common.ValueList: {
+            CollectionPath: 'Customers',
+            Parameters    : [
+                {
+                    $Type            : 'Common.ValueListParameterInOut',
+                    LocalDataProperty: 'firstName',
+                    ValueListProperty: 'ContactName'
+                },
+                // {
+                //     $Type            : 'Common.ValueListParameterOut',
+                //     LocalDataProperty: 'address',
+                //     ValueListProperty: 'Address'
+                // }
+            ]
+        },
+        
+    );
 
     state_code   @(Common.ValueList: {
 

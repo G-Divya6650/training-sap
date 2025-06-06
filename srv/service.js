@@ -3,6 +3,12 @@ const cds = require('@sap/cds');
 module.exports = cds.service.impl(async function () {
     const { Books, Buyers } = this.entities;
 
+    const northWindService = await cds.connect.to('NorthWind');
+
+    this.on('READ', 'Customers', async req => {
+        return northWindService.run(req.query);
+    })
+
     this.before('CREATE',Books, async req => {
         console.log(req.data)
 
@@ -25,7 +31,7 @@ module.exports = cds.service.impl(async function () {
          //console.log(req)
          // console.log(req.data)
          const id = req.params[0].ID;
-         
+         console.log("ID value =", id)
           let vBook = await SELECT.one.from(Books).where({ID: id});
           console.log('vBook', vBook);
          

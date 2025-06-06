@@ -121,7 +121,8 @@ annotate service.Books with @(
     ],
 );
 annotate service.Buyers with @(UI.LineItem #PurchaseHistory: [
-    {
+    
+          {
             $Type: 'UI.DataField',
             Value: firstName,
         },

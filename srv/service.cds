@@ -1,17 +1,19 @@
 using {training.cap.db as db} from '../db/schema';
+using {NorthWind as external} from './external/NorthWind';
 
 service catalogService {
       @odata.draft.enabled
-      entity Users     as projection on db.Users;
+      entity Users           as projection on db.Users;
 
-      entity States    as projection on db.States;
-      entity Countries as projection on db.Countries;
+      entity UserCredentials as projection on db.UserCredentials;
+      entity States          as projection on db.States;
+      entity Countries       as projection on db.Countries;
 
       @cds.redirection.target
-      entity Users1    as projection on db.Users;
+      entity Users1          as projection on db.Users;
 
       @odata.draft.enabled
-      entity Books     as
+      entity Books           as
             projection on db.Books {
                   *,
                   createdAt  @(Common.Label: '{i18n>createdAt}'),
@@ -30,3 +32,7 @@ service catalogService {
       @cds.redirection.target
       view AvailableBooks as select from db.AvailableBooks
 };
+
+extend service catalogService {
+      entity Customers as projection on external.Customers;
+}

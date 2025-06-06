@@ -10,7 +10,7 @@ entity Users : managed, cuid {
     firstName         : String @title: '{i18n>firstName}';
     lastName          : String @title: '{i18n>lastName}';
     dob               : Date   @title: '{i18n>dob}';
-    //address           : String @title: '{i18n>address}';
+ //address           : String @title: '{i18n>address}';
     houseNumber       : String @title: '{i18n>houseNumber}';
     street            : String @title: '{i18n>street}';
     city              : String @title: '{i18n>city}';
@@ -86,4 +86,4 @@ view AvailableBooks as
         isAvailable
     }
     where
-        isAvailable = true;
+        isAvailable = false;
